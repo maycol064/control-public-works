@@ -7,7 +7,8 @@ const initialState: Auth = {
   name: null,
   id: null,
   username: null,
-  token: null
+  token: null,
+  role: null,
 };
 
 export const authSlice = createSlice({
@@ -15,12 +16,13 @@ export const authSlice = createSlice({
   initialState,
   reducers: {
     login: (state, action: PayloadAction<Auth>) => {
-      const { status, name, id, username, token } = action.payload
+      const { name, id, username, token, role } = action.payload
       state.status = 'authenticated',
       state.name = name;
       state.id = id;
       state.username = username;
       state.token = token;
+      state.role = role
     },
 
     logout: (state, action: PayloadAction<Auth>) => {
@@ -29,6 +31,7 @@ export const authSlice = createSlice({
       state.id = null;
       state.username = null;
       state.token = null;
+      state.role = null;
     },
 
     checking: (state, action: PayloadAction<Auth>) => {
@@ -37,6 +40,7 @@ export const authSlice = createSlice({
       state.id = null;
       state.username = null;
       state.token = null;
+      state.role = null;
     }
   }
 });
