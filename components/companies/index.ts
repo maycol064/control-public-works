@@ -1,1 +1,2 @@
-export * from './ModalAddCompany'
+export * from './ModalAddCompany';
+export * from './TableCompanies';

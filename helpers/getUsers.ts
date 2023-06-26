@@ -1,23 +1,22 @@
-import { Users } from '@/interfaces/users';
-import axios, { Axios, AxiosError } from 'axios';
+import { User } from '@/interfaces/users';
+import axios, { AxiosError } from 'axios';
 
 export const getUsers = async (token: string) => {
   const url = process.env.NEXT_PUBLIC_API_URL;
   try {
-    const { data, status } = await axios.get<Users>(
-      `${url}/api/users`, 
-      {
-        headers: {
-          Authorization: `Bearer ${token}`
-        }
-      }  
-    );
-    
-    console.log({ users: data, status });
-    return { users: data.users, status };
+    const response = await axios.get<User[]>(`${url}/api/users`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const { data, status } = response;
+    return { data, status };
   } catch (error) {
-    return axios.isAxiosError(error)
-     ? error.response
-     : 'Hubo un error...'
+    if (axios.isAxiosError(error)) {
+      const axiosError = error as AxiosError;
+      return axiosError.response?.data || 'Hubo un error...';
+    } else {
+      return 'Hubo un error...';
+    }
   }
 };

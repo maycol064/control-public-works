@@ -1,4 +1,4 @@
-import { ModalAddCompany } from "@/components/companies";
+import { ModalAddCompany, TableCompanies } from "@/components/companies";
 import { Box, Typography } from "@mui/material";
 import { useState } from "react"
 
@@ -21,11 +21,11 @@ export const Companies = () => {
       >
         <ModalAddCompany open={openModal} handleModal={handleModal} />
       </Box>
-      {/* Table companies */}
+      <TableCompanies />
       <Typography variant="body2" sx={{ mt: 4 }}>
         *Todas las compañías que se muestran aquí, son ajenas al
         gobierno
       </Typography>
     </Box>
-  )
+  );
 }

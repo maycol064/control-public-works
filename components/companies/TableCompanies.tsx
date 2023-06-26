@@ -1,12 +1,4 @@
-import { useTableDependencies } from '@/hooks';
-import {
-  Paper,
-  Table,
-  TableCell,
-  TableContainer,
-  TableHead,
-} from '@mui/material';
-import { TableDependenciesBody } from './TableDependenciesBody';
+import { Paper, Table, TableCell, TableContainer, TableHead } from "@mui/material";
 
 interface Column {
   id: string;
@@ -21,31 +13,26 @@ const columns: readonly Column[] = [
   { id: 'actions', label: 'Acciones', minWidth: 150, align: 'left' },
 ];
 
-export const TableDependencies = () => {
-  const { data, loading } = useTableDependencies();
+export const TableCompanies = () => {
+  // Hook para llamarlas
 
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 440 }}>
-        <Table stickyHeader size="small">
+        <Table stickyHeader size='small'>
           <TableHead>
             {columns.map((column) => (
               <TableCell
                 key={column.id}
                 align={column.align}
-                sx={{
-                  minWidth: column.minWidth,
-                  bgcolor: '#89CED9',
-                  color: '#020202',
-                }}
+                sx={{ minWidth: column.minWidth, bgcolor: '#89CED9', color: '#020202' }}
               >
                 {column.label}
               </TableCell>
             ))}
           </TableHead>
-          <TableDependenciesBody data={data} loading={loading} />
         </Table>
       </TableContainer>
     </Paper>
-  );
-};
+  )
+}

@@ -1,6 +1,7 @@
 import { GroupAdd, PersonAdd } from '@mui/icons-material';
 import { Box, Button, Modal, Typography } from '@mui/material';
 import { FC } from 'react';
+import { FormAddCompany } from './FormAddCompany';
 
 interface PropsModal {
   open: boolean;
@@ -48,7 +49,7 @@ export const ModalAddCompany: FC<PropsModal> = ({ open, handleModal }) => {
       <Modal open={open} onClose={handleModal}>
         <Box sx={style}>
           <Typography variant="h6">Registro de dependencia</Typography>
-          {/* Formulario */}
+          <FormAddCompany handleModal={handleModal} />
         </Box>
       </Modal>
     </>

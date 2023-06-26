@@ -9,14 +9,14 @@ import {
   TextField,
 } from '@mui/material';
 
-const sectors = [
-  { name: 'Salud', value: 'salud' },
-  { name: 'Educación', value: 'educacion' },
-  { name: 'Energético', value: 'energetico' },
-  { name: 'Ambiental', value: 'ambiental' },
+const services = [
+  { name: 'Construcción', value: 'construccion' },
+  { name: 'Plomería', value: 'plomeria' },
+  { name: 'Cerrajería', value: 'cerrajeria' },
+  { name: 'Electrica', value: 'electrica' },
 ];
 
-export const FormAddDependency = ({
+export const FormAddCompany = ({
   handleModal,
 }: {
   handleModal: () => void;
@@ -61,9 +61,9 @@ export const FormAddDependency = ({
             onBlur={handleBlur}
             label="Sector"
           >
-            {sectors.map((sector) => (
-              <MenuItem key={sector.value} value={sector.value}>
-                {sector.name}
+            {services.map((service) => (
+              <MenuItem key={service.value} value={service.value}>
+                {service.name}
               </MenuItem>
             ))}
           </Select>

@@ -6,3 +6,4 @@ export * from './useLogged';
 export * from './useLogin';
 export * from './useMatch';
 export * from './useNavbar'
+export * from './useTableDependencies';
