@@ -1,8 +1,7 @@
-import { ProjectsView } from '@/components';
+import { ModalAddWork, ProjectsView } from '@/components';
 import { useAppSelector } from '@/hooks';
 import { selectAuth } from '@/store/auth/slice';
-import { Add } from '@mui/icons-material';
-import { Box, Button, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 export const Dashboard = () => {
   const auth = useAppSelector(selectAuth);
@@ -18,10 +17,7 @@ export const Dashboard = () => {
         }}
       >
         <Typography variant="h6">Hola {auth.name}, tus proyectos:</Typography>
-        <Button size="small" sx={{ textTransform: 'none', display: 'flex', gap: 1 }} variant="outlined">
-          <Add />
-          <span>Nuevo proyecto</span>
-        </Button>
+        <ModalAddWork />
       </Box>
       <ProjectsView />
     </Box>

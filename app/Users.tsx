@@ -1,5 +1,4 @@
-import { ModalAddUser } from '@/components/ModalAddUser';
-import { TableUsers } from '@/components/TableUsers';
+import { ModalAddUser, TableUsers } from '@/components';
 import { Box } from '@mui/material';
 import { FC, useState } from 'react';
 

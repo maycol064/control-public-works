@@ -1,2 +1,2 @@
-export * from './CardProject';
-export * from './ProjectsView';
+export * from './projects';
+export * from './users';

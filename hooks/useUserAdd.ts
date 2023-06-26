@@ -8,6 +8,7 @@ interface FormValues {
   lastname: string;
   username: string;
   password: string;
+  typeCompany: string;
   company: string;
   role: string;
 }
@@ -18,6 +19,7 @@ const valuesForm = {
   username: '',
   password: '',
   company: '',
+  typeCompany: '',
   role: '',
 } as FormValues;
 

@@ -1,3 +1,5 @@
+export * from './useAddDependency';
+export * from './useAddWork';
 export * from './useAppDispatch';
 export * from './useAppSelector';
 export * from './useLogged';

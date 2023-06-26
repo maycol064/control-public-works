@@ -3,9 +3,7 @@ import { BlockOutlined, DeleteOutline, EditOutlined } from '@mui/icons-material'
 import { IconButton, TableBody, TableCell, TableRow, Tooltip } from '@mui/material'
 import { FC } from 'react'
 
-export const TableBodyUsers: FC<TableUsers> = ({ users }) => {
-  console.log(users);
-  
+export const TableBodyUsers: FC<TableUsers> = ({ users }) => {  
   return (
     <TableBody>
         {users && users.map(user => (

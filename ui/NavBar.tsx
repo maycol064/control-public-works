@@ -9,10 +9,10 @@ import {
 } from '@mui/material';
 import Vest from '../public/vest.svg';
 import { Logout } from '@mui/icons-material';
-import {  useNavbar } from '@/hooks';
+import { useNavbar } from '@/hooks';
 
 export const NavBar = () => {
-  const { role, handleLogout } = useNavbar()
+  const { role, handleLogout } = useNavbar();
   return (
     <>
       <AppBar position="sticky">
@@ -44,9 +44,17 @@ export const NavBar = () => {
                 <Typography variant="h6">Controlobras</Typography>
               </Link>
               {role == 'Admin' && (
-                <Link href="/users" sx={{ textDecoration: 'none' }}>
-                  <Typography variant="body1">Usuarios</Typography>
-                </Link>
+                <>
+                  <Link href="/dependencies" sx={{ textDecoration: 'none' }}>
+                    <Typography variant="body1">Dependencias</Typography>
+                  </Link>
+                  <Link href="/companies" sx={{ textDecoration: 'none' }}>
+                    <Typography variant="body1">Compañías</Typography>
+                  </Link>
+                  <Link href="/users" sx={{ textDecoration: 'none' }}>
+                    <Typography variant="body1">Usuarios</Typography>
+                  </Link>
+                </>
               )}
             </Box>
             <Box sx={{ display: 'flex', alignItems: 'center', gap: 2 }}>

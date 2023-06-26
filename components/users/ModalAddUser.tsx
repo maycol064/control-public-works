@@ -49,7 +49,7 @@ export const ModalAddUser: FC<PropsModal> = ({ open, handleModal }) => {
       <Modal open={open} onClose={handleModal}>
         <Box sx={style}>
           <Typography variant="h6">Crea un nuevo usuario</Typography>
-          <FormAddUser />
+          <FormAddUser handleModal={handleModal} />
         </Box>
       </Modal>
     </>

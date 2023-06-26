@@ -1,4 +1,4 @@
-import { Box, Divider } from '@mui/material';
+import { Box, Container, Divider } from '@mui/material';
 import { FC } from 'react';
 import { CardProject } from './CardProject';
 
@@ -30,7 +30,7 @@ export const ProjectsView: FC = () => {
   return (
     <Box sx={{ width: '95%', margin: '0 auto' }}>
       {projects.map(({ name, date, progress, location, manager }) => (
-        <>
+        <Container key={name}>
           <CardProject
             key={name}
             name={name}
@@ -40,7 +40,7 @@ export const ProjectsView: FC = () => {
             manager={manager}
           />
           <Divider />
-        </>
+        </Container>
       ))}
     </Box>
   );

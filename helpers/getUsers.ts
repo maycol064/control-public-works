@@ -13,7 +13,7 @@ export const getUsers = async (token: string) => {
       }  
     );
     
-    console.log({ users: data.users, status });
+    console.log({ users: data, status });
     return { users: data.users, status };
   } catch (error) {
     return axios.isAxiosError(error)

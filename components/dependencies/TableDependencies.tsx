@@ -1,16 +1,4 @@
-import { useAppSelector } from '@/hooks';
-import { useAxiosUsers } from '@/hooks/useAxiosUsers';
-import { selectAuth } from '@/store/auth/slice';
-import {
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-} from '@mui/material';
-import { FC } from 'react';
-import { TableBodyUsers } from './TableBodyUsers';
+import { Paper, Table, TableCell, TableContainer, TableHead } from "@mui/material";
 
 interface Column {
   id: string;
@@ -20,16 +8,14 @@ interface Column {
 }
 
 const columns: readonly Column[] = [
-  { id: 'status', label: 'Estado', minWidth: 100, align: 'left' },
   { id: 'name', label: 'Nombre', minWidth: 250, align: 'left' },
-  { id: 'username', label: 'Usuario', minWidth: 200, align: 'left' },
-  { id: 'role', label: 'Rol', minWidth: 200, align: 'left' },
-  { id: 'actions', label: 'Acciones', minWidth: 200, align: 'left' },
+  { id: 'sector', label: 'Sector', minWidth: 200, align: 'left' },
+  { id: 'actions', label: 'Acciones', minWidth: 150, align: 'left' },
 ];
 
-export const TableUsers: FC = () => { 
-  const { data } = useAxiosUsers();
-  
+export const TableDependencies = () => {
+  // Hook para llamarlas
+
   return (
     <Paper sx={{ width: '100%', overflow: 'hidden' }}>
       <TableContainer sx={{ maxHeight: 440 }}>
@@ -45,9 +31,8 @@ export const TableUsers: FC = () => {
               </TableCell>
             ))}
           </TableHead>
-          <TableBodyUsers users={data} />
         </Table>
       </TableContainer>
     </Paper>
-  );
-};
+  )
+}
