@@ -48,7 +48,7 @@ export const ModalAddCompany: FC<PropsModal> = ({ open, handleModal }) => {
       </Box>
       <Modal open={open} onClose={handleModal}>
         <Box sx={style}>
-          <Typography variant="h6">Registro de dependencia</Typography>
+          <Typography variant="h6">Registro de compañía</Typography>
           <FormAddCompany handleModal={handleModal} />
         </Box>
       </Modal>

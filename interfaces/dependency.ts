@@ -8,7 +8,7 @@ export interface Dependencies {
 }
 
 export interface Dependency {
-  id:     string;
+  id?:     string;
   name:   string;
   sector: string;
 }

@@ -1,23 +1,36 @@
 import { Dependency } from '@/interfaces';
-import { BlockOutlined, DeleteOutline, EditOutlined } from '@mui/icons-material';
-import { IconButton, TableBody, TableCell, TableRow, Tooltip } from '@mui/material'
-import { FC } from 'react'
+import {
+  BlockOutlined,
+  DeleteOutline,
+  EditOutlined,
+} from '@mui/icons-material';
+import {
+  IconButton,
+  TableBody,
+  TableCell,
+  TableRow,
+  Tooltip,
+} from '@mui/material';
+import { FC, useEffect, useState } from 'react';
 
 interface TableDependenciesProps {
-  data: Dependency[],
-  loading: boolean
+  data: Dependency[];
+  loading: boolean;
 }
 
-export const TableDependenciesBody: FC<TableDependenciesProps> = ({ data, loading }) => {  
+export const TableDependenciesBody: FC<TableDependenciesProps> = ({
+  data,
+  loading,
+}) => {
+
   return (
     <TableBody>
-        {!loading && data.map(dependency => (
+      {!loading &&
+        data.map((dependency) => (
           <TableRow key={dependency.id}>
             <TableCell>{dependency.name}</TableCell>
             <TableCell>{dependency.sector.toUpperCase()}</TableCell>
-            <TableCell
-              sx={{ display: 'flex', gap: 1 }}
-            >
+            <TableCell sx={{ display: 'flex', gap: 1 }}>
               <Tooltip title='Editar'>
                 <IconButton size='small' color='success'>
                   <EditOutlined color='success' />
@@ -37,5 +50,5 @@ export const TableDependenciesBody: FC<TableDependenciesProps> = ({ data, loadin
           </TableRow>
         ))}
     </TableBody>
-  )
-}
+  );
+};

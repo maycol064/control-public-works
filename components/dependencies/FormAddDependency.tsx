@@ -1,5 +1,4 @@
-import { useAddDependency, useAppSelector } from '@/hooks';
-import { selectAuth } from '@/store/auth/slice';
+import { useAddDependency } from '@/hooks';
 import {
   Button,
   FormControl,
@@ -21,10 +20,8 @@ export const FormAddDependency = ({
 }: {
   handleModal: () => void;
 }) => {
-  const { token } = useAppSelector(selectAuth);
-  const { handleFormik } = useAddDependency();
-  const { values, handleChange, handleBlur, handleSubmit, setFieldValue } =
-    handleFormik;
+  const { handleFormik } = useAddDependency(handleModal);
+  const { values, handleChange, handleBlur, handleSubmit, isSubmitting } = handleFormik;
 
   return (
     <>
@@ -40,26 +37,26 @@ export const FormAddDependency = ({
         }}
       >
         <TextField
-          size="small"
+          size='small'
           fullWidth
-          id="name"
-          name="name"
+          id='name'
+          name='name'
           value={values.name}
           onChange={handleChange}
           onBlur={handleBlur}
-          label="Nombre"
+          label='Nombre'
         />
-        <FormControl size="small">
-          <InputLabel id="sector">Sector</InputLabel>
+        <FormControl size='small'>
+          <InputLabel id='sector'>Sector</InputLabel>
           <Select
-            size="small"
+            size='small'
             fullWidth
-            id="sector"
-            name="sector"
+            id='sector'
+            name='sector'
             value={values.sector}
             onChange={handleChange}
             onBlur={handleBlur}
-            label="Sector"
+            label='Sector'
           >
             {sectors.map((sector) => (
               <MenuItem key={sector.value} value={sector.value}>
@@ -68,14 +65,21 @@ export const FormAddDependency = ({
             ))}
           </Select>
         </FormControl>
-        <Button type="submit" fullWidth variant="contained" sx={{ mt: '1rem' }}>
+        <Button
+          type='submit'
+          fullWidth
+          variant='contained'
+          sx={{ mt: '1rem' }}
+          onClick={handleSubmit}
+          disabled={isSubmitting}
+        >
           Registrar
         </Button>
         <Button
           fullWidth
-          variant="outlined"
+          variant='outlined'
           sx={{ textTransform: 'none', mt: '-0.5rem' }}
-          color="warning"
+          color='warning'
           onClick={handleModal}
         >
           Cancelar
