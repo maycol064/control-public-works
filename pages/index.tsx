@@ -3,7 +3,7 @@ import { Dashboard } from '@/app';
 
 const HomePage = () => {
   return (
-    <MainLayout title="Dashboard">
+    <MainLayout title="Controlobras">
       <Dashboard />
     </MainLayout>
   );
