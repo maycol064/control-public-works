@@ -24,7 +24,7 @@ export const useAddCompany = (handleModal: () => void) => {
   const handleFormik: any = useFormik({
     initialValues,
     validationSchema: schemaAddCompany,
-    onSubmit: () => handleSubmit(handleFormik.values, handleFormik.resetForm),
+    onSubmit: () => console.log(handleFormik.values, handleFormik.resetForm),
   });
 
   return {

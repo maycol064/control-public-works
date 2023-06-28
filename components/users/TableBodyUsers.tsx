@@ -4,6 +4,8 @@ import { IconButton, TableBody, TableCell, TableRow, Tooltip } from '@mui/materi
 import { FC } from 'react'
 
 export const TableBodyUsers: FC<TableUsers> = ({ users }) => {  
+  console.log(users);
+  
   return (
     <TableBody>
         {users && users.map(user => (

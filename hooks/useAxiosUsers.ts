@@ -12,7 +12,8 @@ export const useAxiosUsers = () => {
   useEffect(() => {
     const getData = async (token: string) => {
       const response = await getUsers(token);
-      console.log(response);
+      setData(response.data.users);
+      setLoading(false);
     };
     getData(token);
   }, [token]);
